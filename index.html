@@ -47,16 +47,16 @@
         }
 
         @keyframes aurora-flow {
-          0% {
-            transform: rotate(0deg) scale(1.2);
-            filter: blur(30px);
-            opacity: 0.8;
-          }
-          100% {
-            transform: rotate(360deg) scale(1.6);
-            filter: blur(50px);
-            opacity: 1;
-          }
+            0% {
+                transform: rotate(0deg) scale(1.2);
+                filter: blur(30px);
+                opacity: 0.8;
+            }
+            100% {
+                transform: rotate(360deg) scale(1.6);
+                filter: blur(50px);
+                opacity: 1;
+            }
         }
 
         .main-title {
@@ -263,6 +263,58 @@
         .btn-split:hover::after { transform: translateX(100%); }
         .btn-ink-effect { position: absolute; border-radius: 50%; background: white; transform: translate(-50%, -50%) scale(0); animation: ink-anim 0.6s ease-out; }
         @keyframes ink-anim { to { transform: translate(-50%, -50%) scale(2); opacity: 0; } }
+        .btn-social-icon { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s; }
+        .btn-social-icon.twitter { background-color: #1DA1F2; color: white; }
+        .btn-social-icon.twitter:hover { box-shadow: 0 0 15px #1DA1F2; transform: scale(1.1); }
+        .btn-download { background-color: #34D399; color: white; position: relative; overflow: hidden; }
+        .btn-download .progress { position: absolute; top: 0; left: 0; height: 100%; width: 0; background-color: rgba(255,255,255,0.3); transition: width 0.3s; }
+        .btn-download:hover .progress { width: 100%; }
+        .btn-icon-rotate { background-color: #FBBF24; color: #422006; }
+        .btn-icon-rotate:hover i { transform: rotate(360deg); }
+        .btn-icon-rotate i { transition: transform 0.5s; }
+        .btn-skew-bg { position: relative; z-index: 1; }
+        .btn-skew-bg::before { content: ''; position: absolute; top: 0; left: -10%; width: 120%; height: 100%; background: #F472B6; transform: skewX(-20deg); transition: left 0.3s; z-index: -1; }
+        .btn-skew-bg:hover::before { left: -110%; }
+        .btn-text-reveal span { position: relative; display: inline-block; overflow: hidden; }
+        .btn-text-reveal span::after { content: attr(data-text); position: absolute; top: 100%; left: 0; transition: transform 0.3s; }
+        .btn-text-reveal:hover span { transform: translateY(-100%); }
+        .btn-glitch-slice:hover { animation: glitch-slice-anim 0.5s steps(4, end) infinite; }
+        @keyframes glitch-slice-anim { 0% { clip-path: inset(45% 0 50% 0); } 100% { clip-path: inset(20% 0 75% 0); } }
+        .btn-underline-grow::after { content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background: #8B5CF6; transition: all 0.3s; transform: translateX(-50%); }
+        .btn-underline-grow:hover::after { width: 100%; }
+        .btn-lock { background: #6B7280; }
+        .btn-lock .fa-lock { transition: transform 0.3s; }
+        .btn-lock:hover .fa-lock { transform: translateY(-120%); }
+        .btn-lock .fa-unlock { position: absolute; transform: translateY(120%); transition: transform 0.3s; }
+        .btn-lock:hover .fa-unlock { transform: translateY(0); }
+        .btn-arrow-circle::after { content: '→'; position: absolute; right: -20px; opacity: 0; transition: all 0.3s; }
+        .btn-arrow-circle:hover { padding-right: 32px; }
+        .btn-arrow-circle:hover::after { right: 12px; opacity: 1; }
+        .btn-border-pop:hover { border-color: #EC4899; box-shadow: 0 0 0 2px #EC4899; }
+        .btn-social-icon.facebook { background-color: #1877F2; color: white; }
+        .btn-social-icon.facebook:hover { box-shadow: 0 0 15px #1877F2; transform: scale(1.1); }
+        .btn-social-icon.instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; }
+        .btn-social-icon.instagram:hover { box-shadow: 0 0 15px #dc2743; transform: scale(1.1); }
+        .btn-social-icon.linkedin { background-color: #0A66C2; color: white; }
+        .btn-social-icon.linkedin:hover { box-shadow: 0 0 15px #0A66C2; transform: scale(1.1); }
+        .btn-social-icon.github { background-color: #333; color: white; }
+        .btn-social-icon.github:hover { box-shadow: 0 0 15px #333; transform: scale(1.1); }
+        .btn-social-icon.youtube { background-color: #FF0000; color: white; }
+        .btn-social-icon.youtube:hover { box-shadow: 0 0 15px #FF0000; transform: scale(1.1); }
+        .btn-social-icon.pinterest { background-color: #E60023; color: white; }
+        .btn-social-icon.pinterest:hover { box-shadow: 0 0 15px #E60023; transform: scale(1.1); }
+        .btn-social-icon.tiktok { background-color: #000; color: white; }
+        .btn-social-icon.tiktok:hover { box-shadow: 0 0 10px #00f2ea, 0 0 10px #ff0050; transform: scale(1.1); }
+        .btn-social-icon.twitch { background-color: #9146FF; color: white; }
+        .btn-social-icon.twitch:hover { box-shadow: 0 0 15px #9146FF; transform: scale(1.1); }
+        .btn-social-icon.discord { background-color: #5865F2; color: white; }
+        .btn-social-icon.discord:hover { box-shadow: 0 0 15px #5865F2; transform: scale(1.1); }
+        .btn-social-icon.reddit { background-color: #FF4500; color: white; }
+        .btn-social-icon.reddit:hover { box-shadow: 0 0 15px #FF4500; transform: scale(1.1); }
+        .btn-social-icon.whatsapp { background-color: #25D366; color: white; }
+        .btn-social-icon.whatsapp:hover { box-shadow: 0 0 15px #25D366; transform: scale(1.1); }
+        .btn-social-icon.telegram { background-color: #24A1DE; color: white; }
+        .btn-social-icon.telegram:hover { box-shadow: 0 0 15px #24A1DE; transform: scale(1.1); }
 
         /* Estilos para efectos especiales */
         .card-neon-border { position: relative; }
@@ -316,6 +368,30 @@
         .floating-shapes::before { width: 50px; height: 50px; left: 10%; top: 20%; animation-delay: 0s; }
         .floating-shapes::after { width: 80px; height: 80px; right: 10%; bottom: 20%; animation-delay: 5s; }
         @keyframes float { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-20px) scale(1.1); } }
+        .card-background-aurora::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 10% 20%, rgba(167, 139, 250, 0.5), transparent 50%), radial-gradient(circle at 80% 90%, rgba(56, 189, 248, 0.5), transparent 50%); animation: aurora-flow 15s ease-in-out infinite alternate; z-index: 0; border-radius: 1rem; }
+        .card-background-aurora h3 { position: relative; z-index: 1; }
+        .card-pixel-sort:hover img { filter: url(#pixel-sort-filter); }
+        .card-gooey-hover .gooey-blob { position: absolute; background: #8b5cf6; border-radius: 50%; filter: url(#gooey); transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .card-gooey-hover:hover .gooey-blob { transform: scale(1.5); }
+        .card-text-focus:hover .unfocused { filter: blur(2px); opacity: 0.5; }
+        .card-text-focus .focused { transition: transform 0.3s; }
+        .card-text-focus:hover .focused { transform: scale(1.1); }
+        .card-cutout-window { background-image: url('https://placehold.co/320x280/111827/FFFFFF?text=Fondo'); background-size: cover; }
+        .card-cutout-window .window { clip-path: circle(30px at 50% 50%); transition: clip-path 0.4s ease-in-out; }
+        .card-cutout-window:hover .window { clip-path: circle(150px at 50% 50%); }
+        .card-image-trail { --trail-opacity: 0; }
+        .card-image-trail:hover { --trail-opacity: 0.3; }
+        .card-image-trail .trail-img { position: absolute; opacity: var(--trail-opacity); transition: transform 0.5s, opacity 0.5s; }
+        .card-image-trail:hover .trail-img:nth-child(1) { transform: translate(-20px, -20px); }
+        .card-image-trail:hover .trail-img:nth-child(2) { transform: translate(20px, 20px); }
+        .card-grid-reveal .grid-cell { transition: background-color 0.3s; }
+        .card-grid-reveal:hover .grid-cell { background-color: rgba(255,255,255,0.1); }
+        .card-grid-reveal:hover .grid-cell:hover { background-color: rgba(59, 130, 246, 0.5); }
+        .card-perspective-text { transform: perspective(800px); }
+        .card-perspective-text h3 { transition: transform 0.4s; transform-style: preserve-3d; }
+        .card-perspective-text:hover h3 { transform: rotateX(30deg); }
+        .card-video-preview video { transition: filter 0.3s; }
+        .card-video-preview:hover video { filter: none; }
         
         /* New Color Picker Styles */
         #color-picker-container {
@@ -439,7 +515,7 @@
         .title-wavy-effect span { position: relative; display: inline-block; font-size: 2.5rem; font-weight: 800; animation: wave-anim 2s ease-in-out infinite; animation-delay: calc(0.1s * var(--i)); }
         @keyframes wave-anim { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
 
-        .title-fire-effect { font-size: 1rem; font-weight: 800; color: #fca311; animation: fire-anim 2s linear infinite; }
+        .title-fire-effect { font-size: 2.5rem; font-weight: 800; color: #fca311; animation: fire-anim 2s linear infinite; }
         @keyframes fire-anim { 0% { text-shadow: 0 0 10px #fca311, 0 0 20px #fca311, 0 0 30px #e85d04, 0 0 40px #e85d04; } 50% { text-shadow: 0 0 15px #fca311, 0 0 25px #fca311, 0 0 35px #e85d04, 0 0 45px #e85d04, 0 0 5px #fff; } 100% { text-shadow: 0 0 10px #fca311, 0 0 20px #fca311, 0 0 30px #e85d04, 0 0 40px #e85d04; } }
 
         .title-spotlight-scan, .footer-scanner-effect {
@@ -474,6 +550,25 @@
 
         .title-ghost-effect { animation: ghost-float 3s ease-in-out infinite; }
         @keyframes ghost-float { 0%, 100% { transform: translateY(0); text-shadow: 0 0 5px #fff, 0 0 15px #fff, 0 0 25px #0ff; } 50% { transform: translateY(-10px); text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0ff; } }
+        
+        .title-sliced { color: white; animation: slice-anim 4s infinite; }
+        @keyframes slice-anim { 0%, 100% { text-shadow: 0 0 0 white; } 50% { text-shadow: 2px 2px 0 #f472b6, -2px -2px 0 #38bdf8; } }
+        .title-kinetic span { display: inline-block; animation: kinetic-anim 2s infinite; }
+        @keyframes kinetic-anim { 0%, 100% { transform: scale(1) rotate(0); } 50% { transform: scale(1.2) rotate(5deg); } }
+        .title-matrix { font-family: 'Major Mono Display', monospace; color: #34d399; text-shadow: 0 0 5px #34d399; animation: matrix-flicker 0.1s infinite; }
+        @keyframes matrix-flicker { 0% { opacity: 1; } 50% { opacity: 0.7; } 100% { opacity: 1; } }
+        .title-water-reflection::after { content: attr(data-text); position: absolute; bottom: -100%; left: 0; transform: scaleY(-1); opacity: 0.3; background: linear-gradient(to bottom, transparent, white); -webkit-background-clip: text; background-clip: text; }
+        .title-broken { position: relative; }
+        .title-broken:hover::before { content: attr(data-text); position: absolute; top: 0; left: 2px; clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%); text-shadow: -1px 0 red; }
+        .title-broken:hover::after { content: attr(data-text); position: absolute; top: 0; left: -2px; clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%); text-shadow: 1px 0 blue; }
+        .title-comic { font-family: 'Anton', sans-serif; color: #facc15; -webkit-text-stroke: 2px black; text-shadow: 3px 3px 0 #ef4444; }
+        .title-stretch span { display: inline-block; transition: transform 0.2s; }
+        .title-stretch:hover span { transform: scaleX(1.5); }
+        .title-pixelated { font-family: 'Press Start 2P', cursive; color: white; image-rendering: pixelated; }
+        .title-highlight-pen::after { content: ''; position: absolute; bottom: 10%; left: -5%; width: 110%; height: 30%; background: rgba(250, 204, 21, 0.7); z-index: -1; transform: rotate(-2deg); }
+        .title-typing { overflow: hidden; white-space: nowrap; border-right: .15em solid orange; animation: typing-anim 3.5s steps(30, end) infinite, blink-caret .75s step-end infinite; }
+        @keyframes typing-anim { from { width: 0 } to { width: 100% } }
+        @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: orange; } }
 
         /* Payment Zone Styles */
         #payment-container {
@@ -1037,6 +1132,12 @@
                 <feTurbulence type="fractalNoise" baseFrequency="0.01 0.04" numOctaves="1" result="warp" />
                 <feDisplacementMap in="goo" in2="warp" scale="50" xChannelSelector="R" yChannelSelector="G" />
             </filter>
+            <filter id="pixel-sort-filter">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+                <feColorMatrix in="blur" type="saturate" values="2" result="saturate" />
+                <feTurbulence type="fractalNoise" baseFrequency="0.01 0.04" numOctaves="1" result="warp" />
+                <feDisplacementMap in="saturate" in2="warp" scale="20" xChannelSelector="R" yChannelSelector="G" />
+            </filter>
         </defs>
     </svg>
 
@@ -1067,7 +1168,17 @@
                 { name: 'Máscara de Texto', html: '<div class="title-effect-wrapper"><h2 class="text-4xl font-extrabold" style="background: url(https://images.unsplash.com/photo-1517336714731-489689fd1ca8?fit=crop&w=400&h=100) center/cover; -webkit-background-clip: text; background-clip: text; color: transparent;">TITULO DE PRUEBA</h2></div>', css: '/* CSS Only */' },
                 { name: 'Subrayado Animado', html: '<div class="title-effect-wrapper"><h2 class="text-4xl font-extrabold text-white relative inline-block group">TITULO DE PRUEBA<span class="absolute bottom-0 left-0 w-0 h-1 bg-fuchsia-500 transition-all duration-500 group-hover:w-full"></span></h2></div>', css: '/* CSS Only */' },
                 { name: 'Letras Aleatorias', html: '<div class="title-effect-wrapper"><h2 class="text-4xl font-mono font-extrabold text-white" data-scramble-text>TITULO DE PRUEBA</h2></div>', css: '/* Requiere JS */' },
-                { name: 'Contorno y Relleno', html: '<div class="title-effect-wrapper"><h2 class="text-5xl font-black text-transparent transition-all duration-300 hover:text-white" style="-webkit-text-stroke: 2px #38bdf8;">TITULO DE PRUEBA</h2></div>', css: '/* CSS Only */' }
+                { name: 'Contorno y Relleno', html: '<div class="title-effect-wrapper"><h2 class="text-5xl font-black text-transparent transition-all duration-300 hover:text-white" style="-webkit-text-stroke: 2px #38bdf8;">TITULO DE PRUEBA</h2></div>', css: '/* CSS Only */' },
+                { name: 'Rebanado', html: '<div class="title-effect-wrapper"><h2 class="text-5xl font-black title-sliced">TITULO DE PRUEBA</h2></div>', css: '.title-sliced { ... }' },
+                { name: 'Cinético', html: '<div class="title-effect-wrapper"><h2 class="text-5xl font-black title-kinetic">TITULO DE PRUEBA</h2></div>', css: '.title-kinetic span { ... } /* Requiere JS */' },
+                { name: 'Matrix', html: '<div class="title-effect-wrapper"><h2 class="text-4xl font-black title-matrix">TITULO DE PRUEBA</h2></div>', css: '.title-matrix { ... }' },
+                { name: 'Reflejo Agua', html: '<div class="title-effect-wrapper"><h2 class="text-4xl font-black relative title-water-reflection" data-text="TITULO DE PRUEBA">TITULO DE PRUEBA</h2></div>', css: '.title-water-reflection::after { ... }' },
+                { name: 'Roto', html: '<div class="title-effect-wrapper"><h2 class="text-5xl font-black title-broken" data-text="TITULO DE PRUEBA">TITULO DE PRUEBA</h2></div>', css: '.title-broken:hover::before/after { ... }' },
+                { name: 'Comic', html: '<div class="title-effect-wrapper"><h2 class="text-5xl title-comic">TITULO DE PRUEBA</h2></div>', css: '.title-comic { ... }' },
+                { name: 'Estirado', html: '<div class="title-effect-wrapper"><h2 class="text-5xl font-black title-stretch">TITULO DE PRUEBA</h2></div>', css: '.title-stretch span { ... } /* Requiere JS */' },
+                { name: 'Pixelado', html: '<div class="title-effect-wrapper"><h2 class="text-2xl title-pixelated">TITULO DE PRUEBA</h2></div>', css: '.title-pixelated { ... }' },
+                { name: 'Resaltador', html: '<div class="title-effect-wrapper"><h2 class="text-5xl font-black relative inline-block title-highlight-pen">TITULO DE PRUEBA</h2></div>', css: '.title-highlight-pen::after { ... }' },
+                { name: 'Máquina Escribir', html: '<div class="title-effect-wrapper"><h2 class="text-2xl font-mono title-typing">TITULO DE PRUEBA</h2></div>', css: '.title-typing { ... }' }
             ];
 
             const buttons = [
@@ -1106,14 +1217,36 @@
                 { name: 'Burbuja', html: '<button class="btn-bubble bg-sky-500 text-white font-semibold py-2 px-4 rounded-lg relative overflow-hidden">Burbuja</button>', css: '/* Requiere JS */' },
                 { name: 'Icono Desliz.', html: '<button class="bg-fuchsia-500 text-white font-semibold py-2 px-4 rounded-lg flex items-center gap-2 group w-32 justify-center"><span class="transform transition-transform group-hover:-translate-x-4">Icono</span><i class="fas fa-arrow-right transform transition-all opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0"></i></button>' },
                 { name: 'Dividir', html: '<button class="btn-split relative bg-transparent border-2 border-emerald-400 text-emerald-400 font-semibold py-2 px-4 rounded-lg">Dividir</button>', css: '.btn-split::before, .btn-split::after { ... }' },
-                { name: 'Tinta', html: '<button class="btn-ink relative bg-amber-500 text-white font-semibold py-2 px-4 rounded-lg overflow-hidden">Tinta</button>', css: '/* Requiere JS */' }
+                { name: 'Tinta', html: '<button class="btn-ink relative bg-amber-500 text-white font-semibold py-2 px-4 rounded-lg overflow-hidden">Tinta</button>', css: '/* Requiere JS */' },
+                { name: 'Social', html: '<button class="btn-social-icon twitter"><i class="fab fa-twitter"></i></button>', css: '.btn-social-icon { ... }' },
+                { name: 'Descarga', html: '<button class="btn-download font-semibold py-2 px-4 rounded-lg flex items-center gap-2"><div class="progress"></div><span class="relative">Descargar</span></button>', css: '.btn-download { ... }' },
+                { name: 'Icono Rotar', html: '<button class="btn-icon-rotate font-semibold py-2 px-4 rounded-lg flex items-center gap-2"><i class="fas fa-sync-alt"></i>Rotar</button>', css: '.btn-icon-rotate { ... }' },
+                { name: 'Fondo Inclinado', html: '<button class="btn-skew-bg text-white font-semibold py-2 px-4 rounded-lg">Inclinado</button>', css: '.btn-skew-bg { ... }' },
+                { name: 'Texto Revelado', html: '<button class="btn-text-reveal bg-gray-800 text-white font-semibold py-2 px-4 rounded-lg"><span data-text="¡Listo!">Hover</span></button>', css: '.btn-text-reveal { ... }' },
+                { name: 'Glitch Slice', html: '<button class="btn-glitch-slice border-2 border-red-500 text-red-500 font-mono py-2 px-4 rounded-lg">Slice</button>', css: '.btn-glitch-slice { ... }' },
+                { name: 'Subrayado Crece', html: '<button class="btn-underline-grow relative text-purple-400 font-semibold py-2 px-4">Crecer</button>', css: '.btn-underline-grow { ... }' },
+                { name: 'Candado', html: '<button class="btn-lock relative font-semibold py-2 px-4 rounded-lg flex items-center justify-center w-24 overflow-hidden"><i class="fas fa-lock"></i><i class="fas fa-unlock"></i></button>', css: '.btn-lock { ... }' },
+                { name: 'Flecha', html: '<button class="btn-arrow-circle relative bg-gray-200 text-gray-800 font-semibold py-2 px-4 rounded-full">Siguiente</button>', css: '.btn-arrow-circle { ... }' },
+                { name: 'Borde Pop', html: '<button class="btn-border-pop border-2 border-transparent text-pink-500 font-semibold py-2 px-4 rounded-lg transition-all">Pop</button>', css: '.btn-border-pop { ... }' },
+                { name: 'Facebook', html: '<button class="btn-social-icon facebook"><i class="fab fa-facebook-f"></i></button>', css: '.btn-social-icon.facebook { ... }' },
+                { name: 'Instagram', html: '<button class="btn-social-icon instagram"><i class="fab fa-instagram"></i></button>', css: '.btn-social-icon.instagram { ... }' },
+                { name: 'LinkedIn', html: '<button class="btn-social-icon linkedin"><i class="fab fa-linkedin-in"></i></button>', css: '.btn-social-icon.linkedin { ... }' },
+                { name: 'GitHub', html: '<button class="btn-social-icon github"><i class="fab fa-github"></i></button>', css: '.btn-social-icon.github { ... }' },
+                { name: 'YouTube', html: '<button class="btn-social-icon youtube"><i class="fab fa-youtube"></i></button>', css: '.btn-social-icon.youtube { ... }' },
+                { name: 'Pinterest', html: '<button class="btn-social-icon pinterest"><i class="fab fa-pinterest-p"></i></button>', css: '.btn-social-icon.pinterest { ... }' },
+                { name: 'TikTok', html: '<button class="btn-social-icon tiktok"><i class="fab fa-tiktok"></i></button>', css: '.btn-social-icon.tiktok { ... }' },
+                { name: 'Twitch', html: '<button class="btn-social-icon twitch"><i class="fab fa-twitch"></i></button>', css: '.btn-social-icon.twitch { ... }' },
+                { name: 'Discord', html: '<button class="btn-social-icon discord"><i class="fab fa-discord"></i></button>', css: '.btn-social-icon.discord { ... }' },
+                { name: 'Reddit', html: '<button class="btn-social-icon reddit"><i class="fab fa-reddit-alien"></i></button>', css: '.btn-social-icon.reddit { ... }' },
+                { name: 'WhatsApp', html: '<button class="btn-social-icon whatsapp"><i class="fab fa-whatsapp"></i></button>', css: '.btn-social-icon.whatsapp { ... }' },
+                { name: 'Telegram', html: '<button class="btn-social-icon telegram"><i class="fab fa-telegram-plane"></i></button>', css: '.btn-social-icon.telegram { ... }' }
             ];
             
             const effects = [
                 { name: 'Borde Neón', html: '<div class="card card-neon-border flex justify-center items-center p-4"><h3 class="text-xl font-bold">Borde Neón</h3></div>', css: ".card-neon-border { ... }" },
                 { name: 'Parallax', html: '<div class="card card-parallax relative"><img src="https://placehold.co/220x280/1f2937/FFFFFF?text=Fondo" class="card-image w-full h-full object-cover absolute rounded-lg" onerror="this.onerror=null;this.src=\'https://placehold.co/220x280/1f2937/FFFFFF?text=Error\'"><h3 class="card-title text-2xl font-black text-white absolute bottom-4 left-4">PARALLAX</h3></div>', css: ".card-parallax { ... }" },
                 { name: 'Cristal (Glass)', html: '<div class="card card-glass flex justify-center items-center p-4"><h3 class="text-xl font-bold">Cristal</h3></div>', css: ".card-glass { ... }" },
-                { name: 'Aurora', html: '<div class="card card-aurora-demo flex justify-center items-center p-4"><h3 class="text-xl font-bold">Aurora</h3></div>', css: ".card-aurora-demo { ... }" },
+                { name: 'Aurora Demo', html: '<div class="card card-aurora-demo flex justify-center items-center p-4"><h3 class="text-xl font-bold">Aurora</h3></div>', css: ".card-aurora-demo { ... }" },
                 { name: 'Zoom Imagen', html: '<div class="card card-img-zoom"><img src="https://placehold.co/220x280/8b5cf6/FFFFFF?text=Imagen" alt="Placeholder" class="card-image" onerror="this.onerror=null;this.src=\'https://placehold.co/220x280/8b5cf6/FFFFFF?text=Error\'"></div>', css: ".card-img-zoom { ... }" },
                 { name: 'Contenido Desliz.', html: '<div class="card card-slide-content relative"><img src="https://placehold.co/220x280/10b981/FFFFFF?text=Imagen" class="w-full h-full object-cover" onerror="this.onerror=null;this.src=\'https://placehold.co/220x280/10b981/FFFFFF?text=Error\'"><div class="card-content"><h3 class="text-lg font-bold">Título</h3></div></div>', css: ".card-slide-content { ... }" },
                 { name: 'Inclinado', html: '<div class="card card-skew flex justify-center items-center p-4"><h3 class="text-xl font-bold">Inclinado</h3></div>', css: ".card-skew:hover { transform: skew(-5deg, -2deg) scale(1.05); }" },
@@ -1138,7 +1271,16 @@
                 { name: 'Inclinación Magnética', html: '<div class="card card-magnetic-tilt flex items-center justify-center bg-rose-500"><h3 class="text-2xl font-bold">Magnético</h3></div>', css: '/* Requiere JS */' },
                 { name: 'Grano Animado', html: '<div class="card relative flex items-center justify-center overflow-hidden bg-slate-700"><h3 class="text-2xl font-bold">Grano</h3><div class="card-grain"></div></div>', css: '.card-grain { ... }' },
                 { name: 'Patrón Animado', html: '<div class="card relative flex items-center justify-center overflow-hidden"><div class="card-pattern"></div><h3 class="relative text-2xl font-bold">Patrón</h3></div>', css: '.card-pattern { ... }' },
-                { name: 'Elementos Flotantes', html: '<div class="card relative overflow-hidden flex items-center justify-center"><div class="floating-shapes"></div><h3 class="relative text-2xl font-bold">Flotante</h3></div>', css: '.floating-shapes { ... }' }
+                { name: 'Elementos Flotantes', html: '<div class="card relative overflow-hidden flex items-center justify-center"><div class="floating-shapes"></div><h3 class="relative text-2xl font-bold">Flotante</h3></div>', css: '.floating-shapes { ... }' },
+                { name: 'Fondo Aurora', html: '<div class="card card-background-aurora flex justify-center items-center"><h3 class="text-xl font-bold">Fondo Aurora</h3></div>', css: '.card-background-aurora { ... }' },
+                { name: 'Pixel Sort', html: '<div class="card card-pixel-sort"><img src="https://placehold.co/220x280/a78bfa/FFFFFF?text=Imagen" class="w-full h-full object-cover" onerror="this.onerror=null;this.src=\'https://placehold.co/220x280/a78bfa/FFFFFF?text=Error\'"></div>', css: '.card-pixel-sort:hover img { filter: url(#pixel-sort-filter); }' },
+                { name: 'Gooey Hover', html: '<div class="card card-gooey-hover flex justify-center items-center"><div class="gooey-blob w-16 h-16"></div><h3 class="absolute text-xl font-bold">Gooey</h3></div>', css: '.card-gooey-hover { ... } /* Requiere SVG */' },
+                { name: 'Foco en Texto', html: '<div class="card card-text-focus p-4 flex flex-col justify-center items-center text-center"><p class="unfocused">Pasa el cursor</p><h3 class="focused text-2xl font-bold text-sky-400">AQUÍ</h3><p class="unfocused">para enfocar</p></div>', css: '.card-text-focus { ... }' },
+                { name: 'Ventana Recortada', html: '<div class="card card-cutout-window"><div class="window w-full h-full bg-cover" style="background-image: url(\'https://placehold.co/320x280/ec4899/FFFFFF?text=Interior\')"></div></div>', css: '.card-cutout-window { ... }' },
+                { name: 'Rastro de Imagen', html: '<div class="card card-image-trail flex justify-center items-center"><img src="https://placehold.co/100x100/34d399/FFFFFF?text=ICON" class="trail-img w-24 h-24" onerror="this.onerror=null;this.src=\'https://placehold.co/100x100/34d399/FFFFFF?text=Error\'"><img src="https://placehold.co/100x100/34d399/FFFFFF?text=ICON" class="trail-img w-24 h-24" onerror="this.onerror=null;this.src=\'https://placehold.co/100x100/34d399/FFFFFF?text=Error\'"><img src="https://placehold.co/100x100/34d399/FFFFFF?text=ICON" class="w-24 h-24 relative" onerror="this.onerror=null;this.src=\'https://placehold.co/100x100/34d399/FFFFFF?text=Error\'"></div>', css: '.card-image-trail { ... }' },
+                { name: 'Rejilla Revelada', html: '<div class="card card-grid-reveal grid grid-cols-5 grid-rows-5 p-0"><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div><div class="grid-cell"></div></div>', css: '.card-grid-reveal { ... }' },
+                { name: 'Texto Perspectiva', html: '<div class="card card-perspective-text flex justify-center items-center"><h3 class="text-3xl font-black">Perspectiva</h3></div>', css: '.card-perspective-text { ... }' },
+                { name: 'Preview Video', html: '<div class="card card-video-preview p-0"><video autoplay loop muted class="w-full h-full object-cover" style="filter: grayscale(100%) blur(5px);"><source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"></video></div>', css: '.card-video-preview { ... }' }
             ];
 
             // Color Picker Logic (Fixed)
@@ -1492,10 +1634,16 @@
                 let finalHtml = effect.html.replace(/TITULO DE PRUEBA/g, effect.name.toUpperCase());
                 finalHtml = finalHtml.replace(/data-text="[^"]*"/, `data-text="${effect.name.toUpperCase()}"`);
                 
-                if (effect.name === 'Ondulado' || effect.name === 'Sombra Pop' || effect.name === 'Split Flap') {
+                if (['Ondulado', 'Sombra Pop', 'Split Flap', 'Cinético', 'Estirado'].includes(effect.name)) {
                     const text = effect.name.toUpperCase();
                     const wrappedText = text.split('').map((letter, i) => `<span style="--i:${i}" data-text="${letter}">${letter === ' ' ? '&nbsp;' : letter}</span>`).join('');
-                    const wrapperClass = effect.name === 'Ondulado' ? 'title-wavy-effect' : (effect.name === 'Sombra Pop' ? 'title-text-shadow-pop' : 'title-split-flap');
+                    const wrapperClass = {
+                        'Ondulado': 'title-wavy-effect',
+                        'Sombra Pop': 'title-text-shadow-pop',
+                        'Split Flap': 'title-split-flap',
+                        'Cinético': 'title-kinetic',
+                        'Estirado': 'title-stretch'
+                    }[effect.name];
                     finalHtml = `<div class="title-effect-wrapper"><h2 class="${wrapperClass}">${wrappedText}</h2></div>`;
                 }
                 return createComponentDisplay(effect, index, item => finalHtml);
@@ -1891,4 +2039,3 @@
     </script>
 </body>
 </html>
-
