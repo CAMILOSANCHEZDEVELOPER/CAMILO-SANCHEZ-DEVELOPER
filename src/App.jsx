@@ -6,7 +6,7 @@ import Background3D from './components/Background3D';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/CAMILO-SANCHEZ-DEVELOPER/">
       <div className="relative min-h-screen text-white">
         {/* Background Aurora Effects (Global) */}
         <div className="fixed inset-0 z-[-1] bg-black">
