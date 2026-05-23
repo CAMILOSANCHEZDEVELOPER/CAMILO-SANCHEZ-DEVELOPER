@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camilo Andres Serrano Sanchez - Portafolio</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lato&family=Montserrat&family=Oswald&family=Raleway&family=Merriweather&family=Nunito&family=Playfair+Display&family=Poppins&family=Open+Sans&family=Ubuntu&family=Source+Code+Pro&family=Lobster&family=Pacifico&family=Bebas+Neue&family=Anton&family=Dancing+Script&family=Shadows+Into+Light&family=Caveat&family=Indie+Flower&family=Press+Start+2P&family=Special+Elite&family=Sacramento&family=Orbitron&family=Cinzel&family=Architects+Daughter&family=Kalam&family=Zeyada&family=Major+Mono+Display&family=Homemade+Apple&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body class="p-4 sm:p-8 pt-24 sm:pt-28">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-gray-900/60 backdrop-blur-xl border-b border-white/10 transition-all duration-300 shadow-lg shadow-black/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-purple-500 hover:opacity-80 transition-opacity">Camilo Serrano</a>
+                </div>
+                <div class="flex space-x-1 sm:space-x-4">
+                    <a href="index.html" class="text-gray-300 hover:bg-white/5 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Sobre Mí</a>
+                    <a href="efectos.html" class="bg-white/10 text-white px-3 py-2 rounded-md text-sm font-medium transition-colors border border-white/20">Laboratorio</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="absolute top-4 right-4 sm:top-8 sm:right-8 z-40">
+        <button id="login-btn" class="btn-shine bg-indigo-600 text-white font-semibold py-2 px-5 rounded-lg inline-flex items-center gap-2">
+            <i class="fas fa-sign-in-alt"></i>
+            Login
+        </button>
+    </div>
+
+    <header class="text-center my-8 sm:my-12">
+        <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold main-title mb-6">Laboratorio de Efectos</h1>
+        <p class="text-lg text-gray-300 max-w-2xl mx-auto">Explora componentes interactivos, pasarela de pagos simulada, paleta de colores y gráficos dinámicos.</p>
+    </header>
+
+    <main class="max-w-7xl mx-auto">
+        
+
+
+        <div id="payment-section" class="glass-container">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-center section-title">Zona de Pagos y Donaciones</h2>
+            
+            <div class="max-w-md mx-auto mb-8">
+                <label for="amount-input" class="block text-lg font-medium text-sky-300 mb-2 text-center">Selecciona o ingresa un monto (USD)</label>
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-400 text-lg">$</span>
+                    <input type="number" id="amount-input" class="w-full bg-gray-900/70 border-2 border-gray-600 rounded-lg pl-8 pr-4 py-3 text-lg text-center focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition" placeholder="25.00">
+                </div>
+                <div class="grid grid-cols-3 gap-4 mt-4">
+                    <button class="amount-btn bg-gray-700 hover:bg-sky-500 transition-colors py-2 rounded-lg font-semibold" data-amount="10">$10</button>
+                    <button class="amount-btn bg-gray-700 hover:bg-sky-500 transition-colors py-2 rounded-lg font-semibold" data-amount="25">$25</button>
+                    <button class="amount-btn bg-gray-700 hover:bg-sky-500 transition-colors py-2 rounded-lg font-semibold" data-amount="50">$50</button>
+                </div>
+            </div>
+
+            <div id="payment-container">
+                <div id="card-ui-container">
+                    <div class="card-face card-front">
+                        <div class="card-header">
+                            <div class="card-chip"></div>
+                            <div class="card-logo">
+                                <i class="fa-solid fa-wifi"></i>
+                            </div>
+                        </div>
+                        <div id="card-ui-number" class="card-number">
+                            #### #### #### ####
+                        </div>
+                        <div class="card-footer">
+                            <div>
+                                <div class="text-gray-300 text-xs">Card Holder</div>
+                                <div id="card-ui-name">NOMBRE COMPLETO</div>
+                            </div>
+                            <div>
+                                <div class="text-gray-300 text-xs">Expires</div>
+                                <div id="card-ui-expiry">MM/YY</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-face card-back">
+                        <div class="black-strip"></div>
+                        <div class="text-right text-xs mb-2">CVV</div>
+                        <div class="cvv-box">
+                            <span id="card-ui-cvv"></span>
+                        </div>
+                        <div class="mt-auto text-xs text-center">
+                            Esta tarjeta es propiedad del banco emisor. Su uso está sujeto a los términos y condiciones del acuerdo del titular de la tarjeta.
+                        </div>
+                    </div>
+                </div>
+                <div id="payment-form-container">
+                    <h3 class="text-xl font-semibold text-white mb-6">Detalles del Pago</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="card-number-input" class="block text-sm font-medium text-gray-300 mb-1">Número de Tarjeta</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="card-number-input" class="payment-form-input" placeholder="1234 5678 9012 3456" maxlength="19">
+                                <i id="card-brand-icon" class="fab fa-cc-visa card-brand-icon"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="card-name-input" class="block text-sm font-medium text-gray-300 mb-1">Nombre del Titular</label>
+                            <input type="text" id="card-name-input" class="payment-form-input" placeholder="Camilo A. Serrano S.">
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-1/2">
+                                <label for="card-expiry-input" class="block text-sm font-medium text-gray-300 mb-1">Expiración</label>
+                                <input type="text" id="card-expiry-input" class="payment-form-input" placeholder="MM/YY" maxlength="5">
+                            </div>
+                            <div class="w-1/2">
+                                <label for="card-cvv-input" class="block text-sm font-medium text-gray-300 mb-1">CVV</label>
+                                <input type="password" id="card-cvv-input" class="payment-form-input" placeholder="123" maxlength="4">
+                            </div>
+                        </div>
+                        <div class="pt-4 space-y-3">
+                             <button type="button" id="confirm-payment-btn" class="w-full btn-shine bg-blue-600 text-white font-bold py-3 px-6 rounded-lg text-lg">
+                                 <span>Confirmar y Pagar $25.00</span>
+                             </button>
+                             <button type="button" class="w-full bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                                 Cancelar
+                             </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="component-gallery" class="glass-container">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-center section-title">Portafolio de Componentes Disponibles</h2>
+            <p class="text-center text-gray-400 mb-12">Una biblioteca interactiva de estilos y efectos. Haz clic en "Ver Código" para copiar y pegar.</p>
+            
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-sky-400 mb-6 border-b-2 border-sky-400/50 pb-2">Paleta de Colores Interactiva</h3>
+                <div id="color-picker-container">
+                    <div id="color-wheel-container">
+                        <canvas id="color-wheel"></canvas>
+                        <div id="color-picker-indicator"></div>
+                    </div>
+                    <div id="color-details">
+                        <div id="color-preview"></div>
+                        <div class="color-input-group">
+                            <label for="hex-input">HEX</label>
+                            <input type="text" id="hex-input" readonly>
+                        </div>
+                        <div class="color-input-group">
+                            <label for="rgb-input">RGB</label>
+                            <input type="text" id="rgb-input" readonly>
+                        </div>
+                        <div class="color-input-group">
+                            <label for="hsl-input">HSL</label>
+                            <input type="text" id="hsl-input" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-sky-400 mb-6 border-b-2 border-sky-400/50 pb-2">Gráficos para Análisis</h3>
+                <input type="text" id="search-charts" placeholder="Buscar gráfico..." class="w-full max-w-sm mx-auto block bg-gray-900/70 border border-gray-600 rounded-lg px-4 py-2 mb-8 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition">
+                <div id="charts-gallery" class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
+            </div>
+
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-sky-400 mb-6 border-b-2 border-sky-400/50 pb-2">Tipografía</h3>
+                <input type="text" id="search-typography" placeholder="Buscar tipografía..." class="w-full max-w-sm mx-auto block bg-gray-900/70 border border-gray-600 rounded-lg px-4 py-2 mb-8 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition">
+                <div id="typography-gallery" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </div>
+
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-sky-400 mb-6 border-b-2 border-sky-400/50 pb-2">Efectos de Título</h3>
+                <input type="text" id="search-title-effects" placeholder="Buscar efectos de título..." class="w-full max-w-sm mx-auto block bg-gray-900/70 border border-gray-600 rounded-lg px-4 py-2 mb-8 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition">
+                <div id="title-effects-gallery" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </div>
+
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-sky-400 mb-6 border-b-2 border-sky-400/50 pb-2">Efectos Especiales</h3>
+                <input type="text" id="search-effects" placeholder="Buscar efectos especiales..." class="w-full max-w-sm mx-auto block bg-gray-900/70 border border-gray-600 rounded-lg px-4 py-2 mb-8 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition">
+                <div id="effects-gallery" class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
+            </div>
+
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-sky-400 mb-6 border-b-2 border-sky-400/50 pb-2">Botones Funcionales</h3>
+                <input type="text" id="search-buttons" placeholder="Buscar botones..." class="w-full max-w-sm mx-auto block bg-gray-900/70 border border-gray-600 rounded-lg px-4 py-2 mb-8 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition">
+                <div id="buttons-gallery" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 items-center justify-items-center"></div>
+            </div>
+            
+            <div>
+                <h3 class="text-2xl font-bold text-sky-400 mb-6 border-b-2 border-sky-400/50 pb-2">Botones de Redes Sociales</h3>
+                <input type="text" id="search-social-buttons" placeholder="Buscar red social..." class="w-full max-w-sm mx-auto block bg-gray-900/70 border border-gray-600 rounded-lg px-4 py-2 mb-8 focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition">
+                <div id="social-buttons-gallery" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 items-center justify-items-center"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center py-8 mt-4">
+        <div class="footer-fire max-w-3xl mx-auto">
+            <p class="footer-scanner-effect text-lg font-semibold">&copy; 2025 Camilo Andres Serrano Sanchez. Todos los derechos reservados.</p>
+            <p class="footer-scanner-effect text-base mt-2 font-semibold">Desarrollado por Ingeniero Camilo Andres Serrano Sanchez con <i class="fas fa-heart text-pink-500"></i> y mucho <i class="fas fa-coffee text-amber-600"></i>.</p>
+        </div>
+    </footer>
+
+    <div id="certification-modal" class="modal fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center p-4 z-50 opacity-0 pointer-events-none">
+        <div class="modal-content bg-gray-900 rounded-2xl shadow-2xl w-full max-w-md p-6 relative transform scale-95 border border-purple-500">
+            <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
+                <i class="fas fa-times fa-2x"></i>
+            </button>
+            <div id="modal-body" class="text-center"></div>
+        </div>
+    </div>
+
+    <div id="login-modal" class="modal fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center p-4 z-50 opacity-0 pointer-events-none">
+        <div class="modal-content bg-gray-900 rounded-2xl shadow-2xl w-full max-w-sm p-8 relative transform scale-95 border border-indigo-500">
+            <button id="close-login-modal-btn" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
+                <i class="fas fa-times fa-lg"></i>
+            </button>
+            <h3 class="text-2xl font-bold text-center mb-6 section-title">Iniciar Sesión</h3>
+            <form class="space-y-6">
+                <div>
+                    <label for="username" class="block text-sm font-medium text-gray-300 mb-2">Usuario</label>
+                    <input type="text" name="username" id="username" class="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition" placeholder="tu-usuario">
+                </div>
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-300 mb-2">Contraseña</label>
+                    <input type="password" name="password" id="password" class="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition" placeholder="••••••••">
+                </div>
+                <button type="button" class="w-full btn-shine bg-indigo-600 text-white font-semibold py-3 px-6 rounded-lg">
+                    Acceder
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <svg class="absolute w-0 h-0">
+        <defs>
+            <filter id="gooey">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                <feBlend in="SourceGraphic" in2="goo" />
+            </filter>
+            <filter id="liquid-filter">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -7" result="goo" />
+                <feTurbulence type="fractalNoise" baseFrequency="0.01 0.04" numOctaves="1" result="warp" />
+                <feDisplacementMap in="goo" in2="warp" scale="50" xChannelSelector="R" yChannelSelector="G" />
+            </filter>
+            <filter id="pixel-sort-filter">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+                <feColorMatrix in="blur" type="saturate" values="2" result="saturate" />
+                <feTurbulence type="fractalNoise" baseFrequency="0.01 0.04" numOctaves="1" result="warp" />
+                <feDisplacementMap in="saturate" in2="warp" scale="20" xChannelSelector="R" yChannelSelector="G" />
+            </filter>
+        </defs>
+    </svg>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
+
